@@ -1,6 +1,4 @@
-import {
-  lexer
-} from '../src/index';
+import { lexer } from '../lexer';
 
 describe('lexer()', () => {
   it('tokenize Paper 0', () => {
