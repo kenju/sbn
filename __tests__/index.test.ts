@@ -2,14 +2,14 @@ import {
   lexer
 } from '../src/index';
 
-describe('lexer', () => {
+describe('lexer()', () => {
   it('tokenize Paper 100', () => {
     const code = 'Paper 100';
     const expected = [
       { type: "word", value: "Paper" },
       { type: "number", value: 100 },
     ];
-    expect(code).toBe(expected);
+    expect(lexer(code)).toEqual(expected);
   })
 
   it('tokenize Line 0 50 100 50', () => {
@@ -21,6 +21,6 @@ describe('lexer', () => {
       { type: "number", value: 100 },
       { type: "number", value: 50 },
     ];
-    expect(code).toBe(expected);
+    expect(lexer(code)).toEqual(expected);
   })
 });

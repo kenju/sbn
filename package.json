@@ -13,7 +13,9 @@
     "url": "git+ssh://git@github.com/kenju/sbn.git"
   },
   "keywords": [
-    "SVG"
+    "SVG",
+    "Numbers",
+    "compiler"
   ],
   "author": "kenju",
   "bugs": {
