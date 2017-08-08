@@ -1,7 +1,18 @@
 export interface AST {
   type: string;
-  body: any[];
+  body: Expression[];
 };
+
+export interface Expression {
+  type: string;
+  name: string;
+  arguments: Argument[];
+}
+
+export interface Argument {
+  type: string;
+  value: number;
+}
 
 export function parser(tokens): AST {
   const body = tokens.reduce((accum, token) => {
