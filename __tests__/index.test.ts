@@ -3,10 +3,19 @@ import {
 } from '../src/index';
 
 describe('lexer()', () => {
-  it('tokenize Paper 100', () => {
-    const code = 'Paper 100';
+  it('tokenize Paper 0', () => {
+    const code = 'Paper 0';
     const expected = [
       { type: "word", value: "Paper" },
+      { type: "number", value: 0 },
+    ];
+    expect(lexer(code)).toEqual(expected);
+  })
+
+  it('tokenize Pen 100', () => {
+    const code = 'Pen 100';
+    const expected = [
+      { type: "word", value: "Pen" },
       { type: "number", value: 100 },
     ];
     expect(lexer(code)).toEqual(expected);
