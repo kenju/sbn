@@ -26,9 +26,9 @@ describe('transformer()', () => {
         {
           tag: "line",
           attr: {
-            x1: "0",
+            x1: 0,
             y1: 50,
-            x2: "150",
+            x2: 100,
             y2: 50,
             stroke: "rgb(0%, 0%, 0%)",
             "stroke-linecap": "round"
