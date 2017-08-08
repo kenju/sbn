@@ -1,0 +1,45 @@
+{
+  "name": "sbn",
+  "version": "0.0.1",
+  "description": "SVG by numbers",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "webpack -d --profile",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kenju/sbn.git"
+  },
+  "keywords": [
+    "SVG"
+  ],
+  "author": "kenju",
+  "bugs": {
+    "url": "https://github.com/kenju/sbn/issues"
+  },
+  "homepage": "https://github.com/kenju/sbn#readme",
+  "devDependencies": {
+    "@types/jest": "^20.0.6",
+    "awesome-typescript-loader": "^3.2.2",
+    "jest": "^20.0.4",
+    "ts-jest": "^20.0.10",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.4.2",
+    "webpack": "^3.4.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/*.(ts|tsx|js)"
+    ]
+  }
+}
