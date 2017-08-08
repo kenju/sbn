@@ -1,7 +1,13 @@
-export function lexer(code: string) {
+export interface Token {
+  type: string;
+  value: string | number;
+}
+
+export function lexer(code: string): Token[] {
   return code.split(/\s+/)
     .map((token) => {
-      if (isNaN(parseInt(token, 10))) {
+      const maybeInt = parseInt(token, 10);
+      if (isNaN(maybeInt)) {
         return {
           type: 'word',
           value: token,
@@ -9,7 +15,7 @@ export function lexer(code: string) {
       } else {
         return {
           type: 'number',
-          value: parseInt(token, 10),
+          value: maybeInt,
         };
       }
     });
