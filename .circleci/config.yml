@@ -5,7 +5,7 @@ jobs:
       - image: node:8
 
     environment:
-      TZ: "/usr/share/zoneinfo/Asia/Tokyo"
+      TZ: '/usr/share/zoneinfo/Asia/Tokyo'
       NODE_ENV: test
 
     working_directory: /home/ubuntu/workspace
@@ -21,9 +21,7 @@ jobs:
             - npm-{{ .Branch }}-{{ checksum "package-lock.json" }}
             - npm-{{ .Branch }}-
 
-      - run:
-          name: Install Dependencies
-          command: npm install
+      - run: cd typescript && npm install
 
       - save_cache:
           name: Save Cache for NPM
@@ -31,7 +29,4 @@ jobs:
           paths:
             - /home/ubuntu/workspace/node_modules
 
-      - run:
-          name: Run Test
-          command: |
-            npm run test
+      - run: cd typescript && npm run test
