@@ -15,18 +15,16 @@ jobs:
     steps:
       - checkout
 
+      # typescript
       - restore_cache:
           name: Restore Cache for NPM
           keys:
-            - npm-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - npm-{{ .Branch }}-{{ checksum "typescript/package-lock.json" }}
             - npm-{{ .Branch }}-
-
       - run: cd typescript && npm install
-
       - save_cache:
           name: Save Cache for NPM
-          key: npm-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: npm-{{ .Branch }}-{{ checksum "typescript/package-lock.json" }}
           paths:
             - /home/ubuntu/workspace/node_modules
-
       - run: cd typescript && npm run test
