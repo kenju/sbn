@@ -1,4 +1,4 @@
-# sbn
+# sbn [![CircleCI](https://circleci.com/gh/kenju/sbn.svg?style=svg)](https://circleci.com/gh/kenju/sbn)
 
 This repository is inspired by https://github.com/kosamari/sbn :smile:
 
